@@ -1,6 +1,5 @@
-# QueueCTL - CLI Background Job Queue System
+# QueueCLI - CLI Background Job Queue System
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 A production-grade CLI-based background job queue system with worker processes, automatic retries using exponential backoff, and a Dead Letter Queue (DLQ).
 ## Features
 - Job queue management via CLI
@@ -15,11 +14,11 @@ A production-grade CLI-based background job queue system with worker processes, 
 ### Installation
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/QueueCTL.git
-cd QueueCTL
+git clone https://github.com/yourusername/QueueCLI.git
+cd QueueCLI
 # Install dependencies
 pip install -r requirements.txt
-# Install QueueCTL
+# Install QueueCLI
 pip install -e .
 # Verify
 queuectl --version
@@ -28,7 +27,7 @@ queuectl --version
 ### Basic Usage
 ```bash
 # Enqueue a job
-queuectl enqueue "echo Hello QueueCTL"
+queuectl enqueue "echo Hello QueueCLI"
 # Start workers (in new terminal)
 queuectl worker start --count 2
 # Check status
@@ -141,16 +140,7 @@ QueueCTL/
 **Multiprocessing:** True parallelism (no GIL), fault isolation, easier shutdown vs threads.
 **Exponential Backoff:** Simple ```delay = base^attempts``` balances quick retries with backing off.
 **Job Locking:** 5-minute lock expiration handles crashed workers automatically.
-## Assignment Requirements Met
-✅ All CLI commands  
-✅ Multiple workers  
-✅ Exponential backoff retry  
-✅ Dead Letter Queue  
-✅ Persistent storage  
-✅ Job locking  
-✅ Graceful shutdown  
-✅ Configuration management  
-✅ Tests & documentation  
+ 
 ## Troubleshooting
 | Problem | Solution |
 |---------|----------|
@@ -164,17 +154,4 @@ QueueCTL/
 - Job output logging
 - Web dashboard
 - PostgreSQL support
-## License
-MIT License
-## Demo Video
-**[Add your Google Drive link here]**
----
-**Quick Reference:**
-```bash
-queuectl enqueue "cmd"                  # Add job
-queuectl worker start --count 3         # Start workers
-queuectl status                         # Stats
-queuectl list                           # All jobs
-queuectl dlq list                       # Failed jobs
-```
-Built for Backend Developer Internship Assignment 🚀
+
